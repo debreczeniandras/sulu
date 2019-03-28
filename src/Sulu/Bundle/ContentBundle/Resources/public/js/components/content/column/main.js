@@ -607,7 +607,7 @@ define([
                 ];
 
            if(!!this.showWebspaceNode){
-               urlParts.push('webspace-nodes=single');
+               urlParts.push('webspace-nodes=all');
            }
 
             if (!!selected) {
