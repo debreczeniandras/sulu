@@ -573,7 +573,7 @@ class WebspaceCopyCommand extends ContainerAwareCommand
                 continue;
             }
 
-            $structureArray[$property->getName()]['items'][$key] = $targetDocumentDestination->getUuid();
+            $structureArray[$property->getName()]['items'][$key]['id'] = $targetDocumentDestination->getUuid();
         }
     }
 
