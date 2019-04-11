@@ -96,7 +96,13 @@ class MediaSelectionContainer implements ArrayableInterface
     private function loadData($locale)
     {
         if (!empty($this->ids)) {
-            return $this->mediaManager->getByIds($this->ids, $locale);
+            $medias = $this->mediaManager->getByIds($this->ids, $locale);
+            foreach($medias as &$media){
+                $versionData = $media->getAdditionalVersionData() + ['displayOption' => $this->displayOption];
+                $media->setAdditionalVersionData($versionData);
+            }
+
+            return $medias;
         } else {
             return [];
         }
