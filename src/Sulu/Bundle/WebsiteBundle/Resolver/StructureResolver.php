@@ -72,6 +72,7 @@ class StructureResolver implements StructureResolverInterface
             foreach ($data['extension'] as $name => $value) {
                 $extension = $this->extensionManager->getExtension($structure->getKey(), $name);
                 $data['extension'][$name] = $extension->getContentData($value);
+                $data['view']['extension'][$name] = $value;
             }
 
             $document = $structure->getDocument();
